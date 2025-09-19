@@ -354,8 +354,8 @@
       drawFigure(x1, y1, x2, y2, rad)
       const sk = (elmod * area) / length
 
-      const si = (y2 - y1) / length
-      const co = (x2 - x1) / length
+      const si = lengthUnitCorr *(y2 - y1) / length
+      const co = lengthUnitCorr *(x2 - x1) / length
       const lenToleratance = 0.1
       const siToleratance = 0.001
       const toleranceMatrixDifference = 0.001
@@ -493,8 +493,8 @@
                 `
                 <p class="text-sm text-gray-700"><br>
                     <span class="font-semibold">sin and cos of the local x' axis:</span><br>
-                    $sin(\\theta) = \\frac{y_2 - y_1}{L} = \\frac{${y2} - ${y1}}{${length.toFixed(2)}} = ${si.toFixed(2)}$<br>
-                    $cos(\\theta) = \\frac{x_2 - x_1}{L} = \\frac{${x2} - ${x1}}{${length.toFixed(2)}} = ${co.toFixed(2)}$
+                    $sin(\\theta) = lengthUnitCorr *\\frac{y_2 - y_1}{L} = \\frac{${y2} - ${y1}}{${length.toFixed(2)}} = ${si.toFixed(2)}$<br>
+                    $cos(\\theta) = lengthUnitCorr *\\frac{x_2 - x_1}{L} = \\frac{${x2} - ${x1}}{${length.toFixed(2)}} = ${co.toFixed(2)}$
                 </p>
             `
               )
